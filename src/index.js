@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { useState } from "react";
+import to_do from "./to-do";
+import to_do_form from "./to-do form";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App() {
+    const [tasks, settasks] = useState([])
+    const addTask = () => {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    }
+    const removeTask = () => {
+
+    }
+    const handleToggle = () => {
+
+    }
+
+    return (
+        <div className="App">
+        <header>
+            <h1>To do: {tasks.length}</h1>
+        </header>
+        <to_do_form addTask={addTask} />
+        {tasks.map((task) => {
+            return (
+                <to_do
+                to_do={tasks}
+                key={to_do.id}
+                toggleTask={handleToggle}
+                removeTask={removeTask}
+                />
+            )
+        })}
+       </div>
+    )
+}
+
+export default Index;
