@@ -1,37 +1,11 @@
-import { useState } from "react";
-import to_do from "./to-do";
-import to_do_form from "./to-do form";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-function App() {
-    const [tasks, settasks] = useState([])
-    const addTask = () => {
-
-    }
-    const removeTask = () => {
-
-    }
-    const handleToggle = () => {
-
-    }
-
-    return (
-        <div className="App">
-        <header>
-            <h1>To do: {tasks.length}</h1>
-        </header>
-        <to_do_form addTask={addTask} />
-        {tasks.map((task) => {
-            return (
-                <to_do
-                to_do={tasks}
-                key={to_do.id}
-                toggleTask={handleToggle}
-                removeTask={removeTask}
-                />
-            )
-        })}
-       </div>
-    )
-}
-
-export default Index;
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
